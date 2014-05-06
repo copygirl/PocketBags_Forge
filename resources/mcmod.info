@@ -1,0 +1,14 @@
+[{
+  "modid": "PocketBags",
+  "name": "PocketBags",
+  "description": "",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authors": [ "copygirl" ],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [ ],
+  "dependencies": [ ]
+}]
