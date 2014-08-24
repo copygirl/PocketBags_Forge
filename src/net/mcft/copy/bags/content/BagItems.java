@@ -1,18 +1,18 @@
 package net.mcft.copy.bags.content;
 
-import net.mcft.copy.bags.item.ItemSeedBag;
-import net.mcft.copy.core.util.RegistryUtils;
+import net.mcft.copy.bags.item.ItemBag;
+import net.mcft.copy.bags.item.ItemPouch;
 
 public final class BagItems {
 	
-	public static ItemSeedBag seedBag;
+	public static ItemBag bag = new ItemBag();
+	public static ItemPouch pouch = new ItemPouch();
 	
 	private BagItems() {  }
 	
 	public static void register() {
-		
-		seedBag = RegistryUtils.registerIfEnabled(new ItemSeedBag());
-		
+		bag.register();
+		pouch.register();
 	}
 	
 }

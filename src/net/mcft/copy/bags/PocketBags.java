@@ -9,8 +9,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 
 @Mod(modid = PocketBags.MOD_ID, version = "${version}")
-public class PocketBags
-{
+public class PocketBags {
 	
 	public static final String MOD_ID = "PocketBags";
 	
