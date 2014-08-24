@@ -1,14 +1,21 @@
-[{
-  "modid": "PocketBags",
-  "name": "PocketBags",
-  "description": "",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
-  "authors": [ "copygirl" ],
-  "credits": "",
-  "logoFile": "",
-  "screenshots": [ ],
-  "dependencies": [ ]
-}]
+{
+  "modListVersion": 2,
+  "modList": [{
+    "modid": "PocketBags",
+    "name": "PocketBags",
+    "description": "Minecraft mod which adds bags that store items.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://github.com/copygirl/PocketBags",
+    "updateUrl": "https://github.com/copygirl/PocketBags/releases",
+    "authorList": [ "copygirl" ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [ ],
+    "parent": "",
+    "requiredMods": [ "Forge", "copycore" ],
+    "dependencies": [ "copycore" ],
+    "dependants": [ ],
+    "useDependencyInformation": true
+  }]
+}
