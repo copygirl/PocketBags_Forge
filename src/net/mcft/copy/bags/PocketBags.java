@@ -8,7 +8,8 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 
-@Mod(modid = PocketBags.MOD_ID, version = "${version}")
+@Mod(modid = PocketBags.MOD_ID, version = "${version}",
+     useMetadata = false, dependencies = "required-after:copycore")
 public class PocketBags {
 	
 	public static final String MOD_ID = "PocketBags";

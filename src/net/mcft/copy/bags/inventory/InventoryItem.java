@@ -15,11 +15,19 @@ public class InventoryItem extends InventoryStacks {
 	public final ItemStack item;
 	public final int slot;
 	
-	public InventoryItem(EntityPlayer player, int size) {
-		super(getItems(player.getCurrentEquippedItem(), size));
+	private boolean closed = false;
+	
+	private InventoryItem(EntityPlayer player, ItemStack item, int slot, int size) {
+		super(getItems(item, size));
 		this.player = player;
-		this.item = player.getCurrentEquippedItem();
-		this.slot = player.inventory.currentItem;
+		this.item = item;
+		this.slot = slot;
+	}
+	public InventoryItem(EntityPlayer player, int size) {
+		this(player, player.getCurrentEquippedItem(), player.inventory.currentItem, size);
+	}
+	public InventoryItem(ItemStack item, int size) {
+		this(null, item, -1, size);
 	}
 	
 	@Override
@@ -38,10 +46,14 @@ public class InventoryItem extends InventoryStacks {
 		return result;
 	}
 	
+	@Override
+	public void closeInventory() { closed = true; }
+	
 	protected void updateItem() {
 		NBTTagList list = NbtUtils.writeItems(stacks.toArray(new ItemStack[stacks.size()]));
 		StackUtils.set(item, list, TAG_ITEMS);
-		player.inventory.setInventorySlotContents(slot, item.copy());
+		if (!closed && (player != null))
+			player.inventory.setInventorySlotContents(slot, item);
 	}
 	
 	private static ItemStack[] getItems(ItemStack stack, int size) {
