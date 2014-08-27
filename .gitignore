@@ -4,13 +4,9 @@
 /eclipse/
 /build/
 /bin/
+/libs/
 
 /.classpath
 /.project
 /gradlew
 /gradlew.bat
-
-# Project related files
-# Currently not included
-/downloads/
-/images/

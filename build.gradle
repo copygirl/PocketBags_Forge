@@ -16,14 +16,17 @@ buildscript {
 }
 
 apply plugin: 'forge'
-minecraft {
-    mcversion = "1.7.2"
-    version = mcversion + "-10.12.1.1121"
-}
 
 version = "1.0.0.1"
+group = "net.mcft.copy.bags"
+archivesBaseName = project.projectDir.name + "-1.7.10"
 
-archivesBaseName = project.projectDir.name + "-" + minecraft.mcversion
+minecraft {
+    version = "1.7.10-10.13.0.1180"
+    
+    replaceIn project.projectDir.name + ".java"
+    replace "@VERSION@", project.version
+}
 
 sourceSets.main {
     java { srcDirs 'src' }
@@ -31,6 +34,9 @@ sourceSets.main {
 }
 
 processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+    
     from (sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
         expand 'version':project.version, 'mcversion':project.minecraft.version
