@@ -87,7 +87,7 @@ public class ItemPouch extends ItemBase {
 		
 		InventoryPouch pouch = InventoryPouch.getOrCreate(player, player.inventory.currentItem);
 		ItemStack item = getNextItem(pouch, null);
-		if (!PouchAPI.getEntry(item).isSeed)
+		if ((item == null) || !PouchAPI.getEntry(item).isSeed)
 			return false;
 		boolean used = false;
 		
@@ -109,7 +109,7 @@ public class ItemPouch extends ItemBase {
 		
 		InventoryPouch pouch = InventoryPouch.getOrCreate(player, player.inventory.currentItem);
 		ItemStack item = getNextItem(pouch, null);
-		if (!PouchAPI.getEntry(item).isFood ||
+		if ((item == null) || !PouchAPI.getEntry(item).isFood ||
 		    !((EntityAnimal)target).isBreedingItem(item))
 			return false;
 		boolean used = false;
