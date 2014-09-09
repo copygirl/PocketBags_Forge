@@ -36,6 +36,8 @@ public final class BagItems {
 		registerPouchItem(Items.apple, "apple", false, false);
 		registerPouchItem(Items.reeds, "reeds", true, false);
 		
+		registerPouchItem(Items.nether_wart, "nether_wart", true, false);
+		
 		registerPouchItem(Items.dye, 15, "bonemeal", true, false);
 		registerPouchItem(Items.dye, 3, "cocoa_beans", true, false);
 		
