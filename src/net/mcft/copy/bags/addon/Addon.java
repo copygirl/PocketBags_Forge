@@ -22,7 +22,7 @@ public class Addon
 			registerPouchItem(dropBase, 3, "cotton", false, false);
 		}
 		
-		if(Loader.isModLoaded("Thaumic Tinkerer")){
+		if(Loader.isModLoaded("ThaumicTinkerer")){
 			
 			Item infusedSeed = GameRegistry.findItem("ThaumicTinkerer", "infusedSeeds");
 			Item infusedGrain = GameRegistry.findItem("ThaumicTinkerer", "infusedGrain");
