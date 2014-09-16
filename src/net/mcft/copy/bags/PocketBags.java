@@ -1,5 +1,6 @@
 package net.mcft.copy.bags;
 
+import net.mcft.copy.bags.addon.Addon;
 import net.mcft.copy.bags.content.BagItems;
 import net.mcft.copy.bags.content.BagRecipes;
 import net.mcft.copy.bags.proxy.CommonProxy;
@@ -23,6 +24,7 @@ public class PocketBags {
 		
 		BagItems.register();
 		BagRecipes.register();
+		Addon.register();
 		
 		proxy.init();
 		
