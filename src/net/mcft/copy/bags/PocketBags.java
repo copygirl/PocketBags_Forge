@@ -8,6 +8,8 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = PocketBags.MOD_ID, version = "${version}",
      useMetadata = false, dependencies = "required-after:copycore")
@@ -20,14 +22,19 @@ public class PocketBags {
 	private static CommonProxy proxy;
 	
 	@EventHandler
-	public void init(FMLInitializationEvent event) {
-		
+	public void preInit(FMLPreInitializationEvent event) {
 		BagItems.register();
-		BagRecipes.register();
-		Addon.register();
-		
 		proxy.init();
-		
+	}
+	
+	@EventHandler
+	public void init(FMLInitializationEvent event) {
+		BagRecipes.register();
+	}
+	
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent event) {
+		Addon.registerAll();
 	}
 	
 }
