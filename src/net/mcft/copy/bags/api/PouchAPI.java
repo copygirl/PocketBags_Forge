@@ -15,14 +15,15 @@ public final class PouchAPI {
 	
 	/** Registers an item with specific damage to go into pouches. <br>
 	 *  If isSeed is true, the pouch can be used to plant an area. <br>
-	 *  If isFood is true, the pouch can be used to feed animal within an area. */
+	 *  If isFood is true, the pouch can be used to feed animals within an area. */
 	public static void register(Item item, int damage, String icon,
 	                            boolean isSeed, boolean isFood) {
+		if (item == null) throw new IllegalArgumentException("item is null");
 		entries.add(new Entry(item, damage, icon, isSeed, isFood));
 	}
 	/** Registers an item to go into pouches. <br>
 	 *  If isSeed is true, the pouch can be used to plant an area. <br>
-	 *  If isFood is true, the pouch can be used to feed animal within an area. */
+	 *  If isFood is true, the pouch can be used to feed animals within an area. */
 	public static void register(Item item, String icon,
 	                            boolean isSeed, boolean isFood) {
 		register(item, -1, icon, isSeed, isFood);
