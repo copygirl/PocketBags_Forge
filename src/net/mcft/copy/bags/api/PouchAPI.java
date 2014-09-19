@@ -3,6 +3,7 @@ package net.mcft.copy.bags.api;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.mcft.copy.core.util.StackUtils;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -61,7 +62,7 @@ public final class PouchAPI {
 		
 		public boolean matches(ItemStack stack) {
 			return ((stack.getItem() == item) &&
-			        ((damage == -1) || (stack.getItemDamage() == damage)));
+			        ((damage == -1) || (damage == StackUtils.getDamage(stack))));
 		}
 		
 	}
